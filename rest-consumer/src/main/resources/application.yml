@@ -1,0 +1,30 @@
+server: 
+  port: 8080
+spring: 
+  application: 
+    name: rest-consumer
+feign:
+  client:
+    config:
+      USER-CLIENT: 
+        errorDecoder: com.test.FeignErrorDecoder
+        #encoder: feign.jackson.JacksonEncoder
+        #decoder: feign.jackson.JacksonDecoder
+        
+  hystrix:
+    enabled: false
+management:
+  endpoints:
+    web:
+      exposure:
+        include: hystrix.stream
+logging:
+    level:
+        org:
+            springframework:
+                cloud:
+                    openfeign:
+                        support: DEBUG
+                web:
+                    client: DEBUG
+        
