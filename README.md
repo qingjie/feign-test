@@ -3,7 +3,7 @@
 ```
 void setBuildStatus(String message, String state, String context) {  step([
       $class: "GitHubCommitStatusSetter",
-      reposSource: [$class: "ManuallyEnteredRepositorySource", url: "https://github.com/dhruv1110/dhruv-dev-core"],
+      reposSource: [$class: "ManuallyEnteredRepositorySource", url: "https://github.com/qingjie/qingjie-dev-core"],
       contextSource: [$class: "ManuallyEnteredCommitContextSource", context: context],
       errorHandlers: [[$class: "ChangingBuildStatusErrorHandler", result: "UNSTABLE"]],
       statusResultSource: [ $class: "ConditionalStatusResultSource", results: [[$class: "AnyBuildResult", message: message, state: state]] ]
